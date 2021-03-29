@@ -44,6 +44,10 @@ compiledb:
 	rm -f compile_commands.json
 	$(MAKE) --always-make --dry-run all > build.log
 	compiledb < build.log
+ifeq ($(PLATFORM), Msys)
+# windows pathfix
+	@echo "Applying windows fixes to compile_commands.json";sed -i 's|/c/|/|' compile_commands.json
+endif
 	rm -f build.log
 .PHONY: clean
 clean:
