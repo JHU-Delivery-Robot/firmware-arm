@@ -42,7 +42,7 @@ vendor:
 .PHONY: compiledb
 compiledb:
 	rm -f compile_commands.json
-	$(MAKE) --always-make --dry-run all > build.log
+	$(MAKE) -Bnkw V=0 > build.log
 	compiledb < build.log
 ifeq ($(PLATFORM), Msys)
 # windows pathfix
