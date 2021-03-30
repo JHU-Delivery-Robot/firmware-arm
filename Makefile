@@ -1,17 +1,9 @@
 # Root recursive Makefile
-PROJECT_ROOT  := $(shell pwd)
-CFGDIR        := $(PROJECT_ROOT)/buildcfg
-HEXDIR        := $(PROJECT_ROOT)/bin
-LIBROOT       := $(PROJECT_ROOT)/vendor
-LIBCFG        := $(LIBROOT)/buildcfg
-export PROJECT_ROOT
-export CFGDIR
-export HEXDIR
-export LIBROOT
-export LIBCFG
-# propagate user flags
-export CFLAGS
+include buildcfg/update_root.mk
+PROJECT_ROOT  := .
+REL_ROOT      := ..
 include $(CFGDIR)/verify_version.mk
+
 
 ARTEFACTS := blink.hex
 
@@ -36,7 +28,7 @@ common_deps: _check_lib_vers vendor | $(HEXDIR)
 
 .PHONY: vendor
 vendor:
-	make -C $(LIBROOT)
+	$(MAKE) -C $(LIBROOT)
 
 # utility targets
 .PHONY: compiledb

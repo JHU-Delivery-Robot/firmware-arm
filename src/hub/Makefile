@@ -18,5 +18,6 @@ PROJ_OBJS := main globals handlers init
 ###################################################
 #            BEGIN MAKEFILE INCLUDES              #
 ###################################################
+include update_root.mk
 include $(LIBCFG)/atsamd51j18.mk
 include $(CFGDIR)/project.mk 
