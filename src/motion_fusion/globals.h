@@ -1,7 +1,7 @@
 /**
  * Global variable interface file
  */
-#ifndef _GLOBALS_H_
-#define _GLOBALS_H_
+#ifndef GLOBALS_H_
+#define GLOBALS_H_
 
-#endif /* _GLOBALS_H_ */
+#endif /* GLOBALS_H_ */

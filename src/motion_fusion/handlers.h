@@ -1,7 +1,7 @@
 /**
  * ISR handler interface file
  */
-#ifndef _HANDLERS_H_
-#define _HANDLERS_H_
+#ifndef HANDLERS_H_
+#define HANDLERS_H_
 
-#endif /* _HANDLERS_H_ */
+#endif /* HANDLERS_H_ */

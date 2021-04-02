@@ -9,11 +9,12 @@ LDLIBS_END +=
 
 # Add all subdirectories here separated by the : char
 vpath %.c .
+vpath %.c sys
 # Project name (sets outputted bins)
 PROJ_NAME := hub
 # Project deps
 # add all object dependencies here without the .o extension
-PROJ_OBJS := main globals handlers init
+PROJ_OBJS := main globals handlers init clock
 
 ###################################################
 #            BEGIN MAKEFILE INCLUDES              #

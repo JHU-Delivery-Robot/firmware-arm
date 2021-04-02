@@ -1,8 +1,8 @@
 /**
  * System Initialization function interfaces
  */
-#ifndef _INIT_H_
-#define _INIT_H_
+#ifndef INIT_H_
+#define INIT_H_
 
 /**
  * Prereqs:
@@ -15,4 +15,4 @@
  */
 void AppInit(void);
 
-#endif /* _INIT_H_ */
+#endif /* INIT_H_ */

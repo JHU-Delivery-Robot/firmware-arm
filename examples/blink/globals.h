@@ -1,9 +1,9 @@
-#ifndef _GLOBALS_H_
-#define _GLOBALS_H_
+#ifndef GLOBALS_H_
+#define GLOBALS_H_
 
 #include <stdint.h>
 
 
 extern uint32_t tick_count;
 
-#endif /* _GLOBALS_H_ */
+#endif /* GLOBALS_H_ */
