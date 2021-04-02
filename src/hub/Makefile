@@ -14,7 +14,8 @@ vpath %.c sys
 PROJ_NAME := hub
 # Project deps
 # add all object dependencies here without the .o extension
-PROJ_OBJS := main globals handlers init
+PROJ_OBJS := main globals
+PROJ_OBJS += clock handlers init
 
 ###################################################
 #            BEGIN MAKEFILE INCLUDES              #
