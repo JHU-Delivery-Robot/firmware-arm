@@ -4,7 +4,7 @@
 #include "sam.h"
 #include "system_samd51.h"
 
-#include "init.h"
+#include "sys/init.h"
 
 void loop(void) {
     //implement

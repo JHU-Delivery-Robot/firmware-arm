@@ -9,6 +9,7 @@ LDLIBS_END +=
 
 # Add all subdirectories here separated by the : char
 vpath %.c .
+vpath %.c sys
 # Project name (sets outputted bins)
 PROJ_NAME := hub
 # Project deps
