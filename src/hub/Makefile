@@ -10,12 +10,14 @@ LDLIBS_END +=
 # Add all subdirectories here separated by the : char
 vpath %.c .
 vpath %.c sys
-# Project name (sets outputted bins)
+vpath %.c perif
+# Project name (sets outputed bins)
 PROJ_NAME := hub
 # Project deps
 # add all object dependencies here without the .o extension
 PROJ_OBJS := main globals
 PROJ_OBJS += clock handlers init
+PROJ_OBJS += sercom uart
 
 ###################################################
 #            BEGIN MAKEFILE INCLUDES              #
