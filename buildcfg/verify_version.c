@@ -2,11 +2,11 @@
 
 /* Vendored Library check
  *
- * allow any semver between 0.1.0 and 1.0.0
+ * allow any semver between 0.4.0 and 1.0.0
  */
 #if _LIB_VENDOR_VERSION_MAJOR_ >= 0 && _LIB_VENDOR_VERSION_MAJOR_ < 1 \
-    && _LIB_VENDOR_VERSION_MINOR_ >= 3 \
-    && _LIB_VENDOR_VERSION_PATCH_ >= 2
+    && _LIB_VENDOR_VERSION_MINOR_ >= 4 \
+    && _LIB_VENDOR_VERSION_PATCH_ >= 0
 #	define _LIB_VENDOR_OKAY_
 #endif
 
