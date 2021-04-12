@@ -4,7 +4,7 @@
 CFLAGS     +=
 INCLUDES   +=
 LDFLAGS    +=
-LDLIBS     +=
+LDLIBS     += -larm_cortexM4lf_math
 LDLIBS_END +=
 
 # Add all subdirectories here separated by the : char

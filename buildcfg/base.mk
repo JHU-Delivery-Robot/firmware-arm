@@ -17,7 +17,7 @@ DEPFLAGS       = -MT $@ -MMD -MP -MF $(BUILDIR)/$*.mk
 
 # C compiler settings
 CSTD     := -std=c11
-CFLAGS   += -Wall -Wextra -pedantic $(VENDOR_CFLAGS)
+CFLAGS   += -Wall -Wextra -pedantic --specs=nano.specs $(VENDOR_CFLAGS)
 INCLUDES += -I$(PROJECT_ROOT)/lib/include $(VENDOR_INCLUDES)
 
 # linker config
