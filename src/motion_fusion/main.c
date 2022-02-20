@@ -101,6 +101,20 @@ double** compute_H(double dt) {
     return H;
 }
 
+
+// returns the identity matrix I_12
+double** compute_B(void) {
+    static double B[12][12];
+    
+    for (char i = 0; i < 12; i++) {
+        for (char j = 0; j < 12; j++) {
+            // 1 along diagonal; 0 elsewhere
+            B[i][j] = i == j;
+        }
+    }
+    
+}
+
 void loop(void) {
     //implement
 }
