@@ -1,0 +1,54 @@
+make[1]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm'
+arm-none-eabi-gcc -std=c11 -Wall -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm -o /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/buildcfg/verify_version.o -c /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/buildcfg/verify_version.c
+rm -f /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/buildcfg/verify_version.o
+echo -e "\033[0;32mLibrary Version Checks Passed!\033[0m"
+make -C /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor
+mkdir -p /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/bin
+/Library/Developer/CommandLineTools/usr/bin/make -C src hub
+make[2]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src'
+/Library/Developer/CommandLineTools/usr/bin/make -C hub
+make[3]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src/hub'
+mkdir -p build
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/main.o -MMD -MP -MF build/main.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/main.o -c main.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/globals.o -MMD -MP -MF build/globals.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/globals.o -c globals.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/handlers.o -MMD -MP -MF build/handlers.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/handlers.o -c handlers.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/init.o -MMD -MP -MF build/init.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/init.o -c init.c
+arm-none-eabi-gcc  -Os -Wl,--gc-sections -flto -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -L/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/lib -T/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/samd51j18a_flash.ld /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/newlib_compat.ld --specs=nano.specs --specs=nosys.specs -Wl,-Map=build/hub.elf.map -Wl,--cref -Wl,--warn-section-align -o build/hub.elf  build/main.o build/globals.o build/handlers.o build/init.o   -Wl,--whole-archive -lsamd51j18a -Wl,--no-whole-archive -lnosys 
+rm -f build/hub.hex
+arm-none-eabi-objcopy -O ihex build/hub.elf  build/hub.hex
+arm-none-eabi-size --format=sysv build/hub.elf
+cp build/hub.hex /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/bin
+make[3]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src/hub'
+make[2]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src'
+/Library/Developer/CommandLineTools/usr/bin/make -C src motion_fusion
+make[2]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src'
+/Library/Developer/CommandLineTools/usr/bin/make -C motion_fusion
+make[3]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src/motion_fusion'
+mkdir -p build
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/main.o -MMD -MP -MF build/main.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/main.o -c main.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/globals.o -MMD -MP -MF build/globals.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/globals.o -c globals.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/handlers.o -MMD -MP -MF build/handlers.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/handlers.o -c handlers.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/init.o -MMD -MP -MF build/init.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/init.o -c init.c
+arm-none-eabi-gcc  -Os -Wl,--gc-sections -flto -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -L/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/lib -T/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/samd51j18a_flash.ld /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/newlib_compat.ld --specs=nano.specs --specs=nosys.specs -Wl,-Map=build/motion_fusion.elf.map -Wl,--cref -Wl,--warn-section-align -o build/motion_fusion.elf  build/main.o build/globals.o build/handlers.o build/init.o   -Wl,--whole-archive -lsamd51j18a -Wl,--no-whole-archive -lnosys 
+rm -f build/motion_fusion.hex
+arm-none-eabi-objcopy -O ihex build/motion_fusion.elf  build/motion_fusion.hex
+arm-none-eabi-size --format=sysv build/motion_fusion.elf
+cp build/motion_fusion.hex /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/bin
+make[3]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src/motion_fusion'
+make[2]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/src'
+/Library/Developer/CommandLineTools/usr/bin/make -C examples
+make[2]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/examples'
+/Library/Developer/CommandLineTools/usr/bin/make -C blink
+make[3]: Entering directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/examples/blink'
+mkdir -p build
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/main.o -MMD -MP -MF build/main.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/main.o -c main.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/globals.o -MMD -MP -MF build/globals.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/globals.o -c globals.c
+arm-none-eabi-gcc -std=c11   -Os -ffunction-sections -fdata-sections -flto -Wall -Wextra -pedantic -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -MT build/init.o -MMD -MP -MF build/init.mk  -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/lib/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/include -I/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/arm-cmsis/include -I. -o build/init.o -c init.c
+arm-none-eabi-gcc  -Os -Wl,--gc-sections -flto -mcpu=cortex-m4 -mthumb -D__ATSAMD51G18A__ -L/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/lib -T/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/samd51j18a_flash.ld /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/vendor/dfp_atsamd51/ldscripts/newlib_compat.ld --specs=nano.specs --specs=nosys.specs -Wl,-Map=build/blink.elf.map -Wl,--cref -Wl,--warn-section-align -o build/blink.elf  build/main.o build/globals.o build/init.o   -Wl,--whole-archive -lsamd51j18a -Wl,--no-whole-archive -lnosys 
+rm -f build/blink.hex
+arm-none-eabi-objcopy -O ihex build/blink.elf  build/blink.hex
+arm-none-eabi-size --format=sysv build/blink.elf
+cp build/blink.hex /Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/bin
+make[3]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/examples/blink'
+make[2]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm/examples'
+make[1]: Leaving directory `/Users/ryan/Desktop/Kalman_Filter_Math/firmware-arm'
