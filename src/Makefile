@@ -1,8 +1,11 @@
 include update_root.mk
 
 .PHONY: all
-all: hub motion_fusion
+all: gps hub motion_fusion
 
+.PHONY: gps 
+gps:
+	$(MAKE) -C $@
 .PHONY: hub
 hub:
 	$(MAKE) -C $@
@@ -12,5 +15,6 @@ motion_fusion:
 
 .PHONY: clean compiledb
 clean compiledb:
+	$(MAKE) -C gps $@
 	$(MAKE) -C hub $@
 	$(MAKE) -C motion_fusion $@

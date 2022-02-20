@@ -11,10 +11,10 @@ ARTEFACTS := blink.hex
 
 # metatargets
 .PHONY: all
-all: hub motion_fusion examples
+all: gps hub motion_fusion examples
 
-.PHONY: hub motion_fusion
-hub motion_fusion: common_deps
+.PHONY: gps hub motion_fusion
+gps hub motion_fusion: common_deps
 	$(MAKE) -C src $@
 
 .PHONY: examples
