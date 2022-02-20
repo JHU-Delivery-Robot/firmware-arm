@@ -8,7 +8,7 @@ LDLIBS     +=
 LDLIBS_END +=
 
 # Add all subdirectories here separated by the : char
-vpath %.c .
+vpath %.c .:minmea
 # Project name (sets outputted bins)
 PROJ_NAME := gps
 # Project deps
